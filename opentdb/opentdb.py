@@ -13,23 +13,23 @@ global_question_count = "api_count_global.php"
 class openTriviaDB:
 
     def __init__(self):
+        self._params = {}
         pass
 
     def set_parameters(self, question_parameters: QuestionParameters) -> dict:
-        params = {}
 
         if question_parameters.amount:
-            params["amount"] = question_parameters.amount
+            self._params["amount"] = question_parameters.amount
         if question_parameters.category:
-            params["category"] = question_parameters.category.value
+            self._params["category"] = question_parameters.category.value
         if question_parameters.difficulty:
-            params["difficulty"] = question_parameters.difficulty.value
+            self._params["difficulty"] = question_parameters.difficulty.value
         if question_parameters.type:
-            params["type"] = question_parameters.type.value
+            self._params["type"] = question_parameters.type.value
         if question_parameters.encode:
-            params["encode"] = question_parameters.encode.value
+            self._params["encode"] = question_parameters.encode.value
 
-        return params
+        return self._params
 
     def get_questions(self, category: Categories | None = None,
                       difficulty: Difficulties | None = None,
