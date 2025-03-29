@@ -1,6 +1,6 @@
 import requests
 from typing import Optional
-from enums import Categories, Difficulties, QuestionTypes, Encodings
+from enums import QuestionCategories, QuestionDifficulties, QuestionTypes, QuestionEncodings
 from models import Question, Results, QuestionParameters
 
 base_url = "https://opentdb.com/"
@@ -10,11 +10,21 @@ category_question_count = "api_count.php"
 global_question_count = "api_count_global.php"
 
 
+class Parameters:
+    Category = QuestionCategories
+    Difficulty = QuestionDifficulties
+    Type = QuestionTypes
+    Encode = QuestionEncodings
+
+
 class openTriviaDB:
 
-    def __init__(self):
+    def __init__(self, generate_token: bool = False):
         self._params = {}
-        pass
+        self.token = None
+
+        if generate_token:
+            self.token = requests.get(f"{base_url}api_token.php?command=request").json()["token"]
 
     def set_parameters(self, question_parameters: QuestionParameters) -> dict:
 
@@ -31,10 +41,10 @@ class openTriviaDB:
 
         return self._params
 
-    def get_questions(self, category: Categories | None = None,
-                      difficulty: Difficulties | None = None,
+    def get_questions(self, category: QuestionCategories | None = None,
+                      difficulty: QuestionDifficulties | None = None,
                       question_type: QuestionTypes | None = None,
-                      encodings: Encodings | None = None,
+                      encodings: QuestionEncodings | None = None,
                       number_of_questions: int | None = 10) -> Results:
 
         params = self.set_parameters(QuestionParameters(amount=number_of_questions,

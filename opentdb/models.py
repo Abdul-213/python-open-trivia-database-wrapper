@@ -1,6 +1,6 @@
 from typing import List, Optional
 from pydantic import BaseModel
-from enums import Categories, Difficulties, QuestionTypes, Encodings
+from enums import QuestionCategories, QuestionDifficulties, QuestionTypes, QuestionEncodings
 
 
 class Question(BaseModel):
@@ -19,7 +19,7 @@ class Results(BaseModel):
 
 class QuestionParameters(BaseModel):
     amount: int
-    category: Optional[Categories] = None
-    difficulty: Optional[Difficulties] = None
+    category: Optional[QuestionCategories] = None
+    difficulty: Optional[QuestionDifficulties] = None
     type: Optional[QuestionTypes] = None
-    encode: Optional[Encodings] = None
+    encode: Optional[QuestionEncodings] = None

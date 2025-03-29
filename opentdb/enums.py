@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class Categories(Enum):
+class QuestionCategories(Enum):
     GENERAL_KNOWLEDGE = 9
     ENTERTAINMENT_BOOKS = 10
     ENTERTAINMENT_FILM = 11
@@ -28,7 +28,7 @@ class Categories(Enum):
     ENTERTAINMENT_CARTOON_ANIMATIONS = 32
 
 
-class Difficulties(Enum):
+class QuestionDifficulties(Enum):
     EASY = "easy"
     MEDIUM = "medium"
     HARD = "hard"
@@ -40,15 +40,16 @@ class QuestionTypes(Enum):
     ANY = "any"
 
 
-class Encodings(Enum):
+class QuestionEncodings(Enum):
     DEFAULT = "default"
     URL3986 = "url3986"
     BASE64 = "base64"
 
 
-class QuestionParameters(Enum):
-    AMOUNT = "amount"
-    CATEGORY = "category"
-    DIFFICULTY = "difficulty"
-    TYPE = "type"
-    ENCODE = "encode"
+class ResponseCodes(Enum):
+    SUCCESS = 0
+    NO_RESULTS = 1
+    INVALID_PARAMETER = 2
+    TOKEN_NOT_FOUND = 3
+    TOKEN_EMPTY = 4
+    TOKEN_INVALID = 5
