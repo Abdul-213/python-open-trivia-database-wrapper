@@ -1,7 +1,7 @@
 [project]
-name = "example"
-version = "0.1.0"
-description = "Add your description here"
+name = "open-trivia-database-wrapper"
+version = "0.2.0"
+description = "Python wrapper for the Open Trivia Database"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
