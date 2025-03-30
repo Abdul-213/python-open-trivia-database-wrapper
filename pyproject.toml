@@ -1,5 +1,5 @@
 [project]
-name = "open-trivia-database-wrapper-test"
+name = "open-trivia-database-wrapper"
 version = "0.3.0"
 description = "Python wrapper for the Open Trivia Database"
 readme = "README.md"
