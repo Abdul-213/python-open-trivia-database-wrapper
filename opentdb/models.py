@@ -1,6 +1,6 @@
 from typing import List, Optional
 from pydantic import BaseModel
-from enums import QuestionCategories, QuestionDifficulties, QuestionTypes, QuestionEncodings
+from opentdb.enums import QuestionCategories, QuestionDifficulties, QuestionTypes, QuestionEncodings
 
 
 class Question(BaseModel):

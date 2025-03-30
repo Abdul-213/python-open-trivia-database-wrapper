@@ -1,7 +1,7 @@
 import requests
 from typing import Optional
-from enums import QuestionCategories, QuestionDifficulties, QuestionTypes, QuestionEncodings
-from models import Question, Results, QuestionParameters
+from opentdb.enums import QuestionCategories, QuestionDifficulties, QuestionTypes, QuestionEncodings
+from opentdb.models import Question, Results, QuestionParameters
 
 base_url = "https://opentdb.com/"
 api_url = "api.php"
